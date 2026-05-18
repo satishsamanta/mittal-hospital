@@ -1,0 +1,8 @@
+{
+  "buildCommand": "cd mittal-react && npm install && npm run build",
+  "outputDirectory": "mittal-react/dist",
+  "installCommand": "echo 'install handled by buildCommand'",
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
+}
