@@ -19,7 +19,7 @@ export function TopBar() {
   const opdHours = `${hospital.hours[0].open} to ${hospital.hours[0].close}`;
 
   return (
-    <div className="bg-navy/85 backdrop-blur-md text-white/90 text-xs py-2 hidden md:block relative z-30 border-b border-white/5">
+    <div className="bg-navy/35 backdrop-blur-md text-white text-xs py-2 hidden md:block relative z-30 border-b border-white/10">
       <div className="container-px flex items-center justify-between gap-4">
         {/* Left — contact strip */}
         <div className="flex items-center gap-5 lg:gap-7 min-w-0">

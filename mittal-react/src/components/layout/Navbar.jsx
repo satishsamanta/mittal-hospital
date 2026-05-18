@@ -53,6 +53,10 @@ export function Navbar({ onOpenMobile }) {
   const [scrolled, setScrolled] = useState(false);
   const [openIdx, setOpenIdx] = useState(null);
   const loc = useLocation();
+  const isHome = loc.pathname === '/';
+  // On Home, navbar floats transparent over the building hero image until user scrolls.
+  // On other pages, navbar stays light/frosted glass to sit cleanly on lighter backgrounds.
+  const onImage = isHome && !scrolled;
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12);
@@ -66,7 +70,11 @@ export function Navbar({ onOpenMobile }) {
   return (
     <header
       className={`sticky top-0 z-40 transition-all duration-300 ${
-        scrolled ? 'glass-strong shadow-glass py-2' : 'bg-white/40 backdrop-blur-md py-3'
+        scrolled
+          ? 'glass-strong shadow-glass py-2'
+          : onImage
+            ? 'bg-transparent py-3 border-b border-white/10'
+            : 'bg-white/40 backdrop-blur-md py-3'
       }`}
     >
       <div className="container-px flex items-center justify-between gap-4">
@@ -96,7 +104,9 @@ export function Navbar({ onOpenMobile }) {
                   end={item.to === '/'}
                   className={({ isActive }) =>
                     `px-3.5 py-2 rounded-full text-sm font-medium flex items-center gap-1.5 transition-colors ${
-                      isActive && item.to !== '#' ? 'text-primary-600 bg-primary-50' : 'text-navy hover:text-primary-600'
+                      isActive && item.to !== '#'
+                        ? (onImage ? 'text-white bg-white/15' : 'text-primary-600 bg-primary-50')
+                        : (onImage ? 'text-white hover:text-accent-300' : 'text-navy hover:text-primary-600')
                     }`
                   }
                 >
@@ -138,7 +148,8 @@ export function Navbar({ onOpenMobile }) {
           </Button>
           <button
             onClick={onOpenMobile}
-            className="lg:hidden w-10 h-10 grid place-items-center rounded-xl glass text-navy"
+            className={`lg:hidden w-10 h-10 grid place-items-center rounded-xl transition-colors
+              ${onImage ? 'bg-white/15 backdrop-blur border border-white/25 text-white' : 'glass text-navy'}`}
             aria-label="Open menu"
           >
             <i className="fa-solid fa-bars" />

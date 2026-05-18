@@ -8,8 +8,8 @@ import { hospital, departments, doctors, testimonials, empanelments, blogPosts }
 
 function HeroSection() {
   return (
-    <section className="relative pt-32 md:pt-40 pb-24 md:pb-32 -mt-[72px] md:-mt-[100px] overflow-hidden">
-      {/* Full-bleed building image extending behind the header */}
+    <section className="relative pt-44 md:pt-56 pb-24 md:pb-32 -mt-[88px] md:-mt-[120px] overflow-hidden">
+      {/* Full-bleed building image extending fully behind the header */}
       <div className="absolute inset-0 -z-10">
         <img
           src={hospital.buildingMain}
@@ -18,9 +18,9 @@ function HeroSection() {
           className="w-full h-full object-cover object-center"
           loading="eager"
         />
-        {/* Dark gradient overlays for text contrast */}
-        <div className="absolute inset-0 bg-gradient-to-r from-navy/90 via-navy/75 to-navy/35" />
-        <div className="absolute inset-0 bg-gradient-to-t from-navy/70 via-transparent to-navy/40" />
+        {/* Light overlays — just enough for text readability while keeping the building clear */}
+        <div className="absolute inset-0 bg-gradient-to-r from-navy/55 via-navy/20 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-navy/25 via-transparent to-navy/15" />
       </div>
 
       {/* Subtle floating medical icons over image */}
@@ -43,14 +43,14 @@ function HeroSection() {
               <i className="fa-solid fa-shield-halved mr-1.5 text-accent-300" />
               First NABH Accredited Hospital · Ajmer Division
             </span>
-            <h1 className="mt-3 mb-5 text-white" style={{ textShadow: '0 2px 30px rgba(0,0,0,0.35)' }}>
+            <h1 className="mt-3 mb-5 text-white" style={{ textShadow: '0 2px 12px rgba(0,0,0,0.55), 0 4px 30px rgba(0,0,0,0.4)' }}>
               Compassionate Care, <br />
-              <span className="bg-gradient-to-r from-accent-300 to-accent-500 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-accent-300 to-accent-500 bg-clip-text text-transparent" style={{ filter: 'drop-shadow(0 2px 10px rgba(0,0,0,0.4))' }}>
                 Modern Medicine
               </span>
               {' '}— Always for You.
             </h1>
-            <p className="text-lg text-white/90 leading-relaxed mb-7 max-w-xl">
+            <p className="text-lg text-white leading-relaxed mb-7 max-w-xl" style={{ textShadow: '0 1px 8px rgba(0,0,0,0.55), 0 2px 16px rgba(0,0,0,0.35)' }}>
               For over 20 years, Mittal Hospital & Research Centre has set the benchmark for ethical, quality healthcare in Ajmer. Super-specialty treatments under one roof, delivered by India's finest medical talent.
             </p>
             <div className="flex flex-wrap gap-3">
@@ -69,11 +69,11 @@ function HeroSection() {
                 { v: 120, s: '+', l: 'Expert Doctors' },
                 { v: 250, s: '+', l: 'Bed Capacity' },
               ].map((s) => (
-                <div key={s.l}>
+                <div key={s.l} style={{ textShadow: '0 1px 6px rgba(0,0,0,0.5)' }}>
                   <div className="text-2xl md:text-3xl font-bold text-white">
                     <Counter to={s.v} suffix={s.s} />
                   </div>
-                  <div className="text-xs text-white/70 mt-1">{s.l}</div>
+                  <div className="text-xs text-white/85 mt-1">{s.l}</div>
                 </div>
               ))}
             </div>
