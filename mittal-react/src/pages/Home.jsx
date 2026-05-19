@@ -4,7 +4,7 @@ import { Seo } from '../components/Seo';
 import { Section, SectionHeader, FadeIn } from '../components/ui/Section';
 import { Button } from '../components/ui/Button';
 import { Counter } from '../components/ui/Counter';
-import { hospital, departments, doctors, testimonials, empanelments, blogPosts } from '../data/site';
+import { hospital, departments, doctors, testimonials, empanelments, blogPosts, govSchemes, psuTieUps, tpas } from '../data/site';
 
 function HeroSection() {
   return (
@@ -498,6 +498,93 @@ function PartnerLogo({ p }) {
   );
 }
 
+function EmpanelmentSection() {
+  const insurersCount = empanelments.filter((e) => !e.scheme).length;
+  const cards = [
+    {
+      tag: 'Government Schemes',
+      title: `${govSchemes.length} central & state schemes`,
+      desc: 'RGHS, CGHS, ECHS, Chief Minister Ayushman Health Yojana and ESIC — cashless treatment for eligible beneficiaries.',
+      icon: 'fa-landmark',
+      color: '#0a6cb8',
+      to: '/empanelment#government-schemes',
+    },
+    {
+      tag: 'PSU & Govt Tie-ups',
+      title: `${psuTieUps.length}+ employer arrangements`,
+      desc: 'Direct billing for employees of AAI, Indian Oil, GAIL, HPCL, Power Grid, Coal India, FCI, Railways, RBSE, MDSU and many more.',
+      icon: 'fa-building-columns',
+      color: '#06a77d',
+      to: '/empanelment#psu-tie-ups',
+    },
+    {
+      tag: 'Health Insurance',
+      title: `${insurersCount}+ leading insurers`,
+      desc: 'Star Health, HDFC ERGO, ICICI Lombard, Tata AIG, Bajaj Allianz, Care Health, Niva Bupa, Aditya Birla, Future Generali and more.',
+      icon: 'fa-shield-heart',
+      color: '#e63946',
+      to: '/empanelment#insurance',
+    },
+    {
+      tag: 'TPA Partners',
+      title: `${tpas.length}+ claim processors`,
+      desc: 'Medi Assist, MD India, Paramount, Heritage, Vipul Medcorp, Vidal Health, Health India and others — seamless cashless claims.',
+      icon: 'fa-file-medical',
+      color: '#f77f00',
+      to: '/empanelment#tpas',
+    },
+  ];
+  return (
+    <Section className="!py-16">
+      <SectionHeader
+        tag="Cashless Treatment Network"
+        title='Empanelled with <span class="text-gradient">India’s leading insurers, TPAs & schemes</span>'
+        subtitle="Mittal Hospital is officially empanelled with all major government health schemes, public-sector employers, private insurers, TPAs and international assistance partners — cashless treatment with your card and a valid ID."
+      />
+      <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-10">
+        {cards.map((c, i) => (
+          <FadeIn key={c.tag} delay={i * 0.08}>
+            <Link
+              to={c.to}
+              className="block card card-hover h-full relative overflow-hidden group"
+            >
+              <div
+                className="absolute -top-12 -right-12 w-44 h-44 rounded-full opacity-20 blur-2xl group-hover:opacity-30 transition-opacity"
+                style={{ background: `linear-gradient(135deg, ${c.color}, ${c.color}aa)` }}
+              />
+              <div className="relative">
+                <div
+                  className="w-14 h-14 rounded-2xl grid place-items-center text-white text-lg mb-4"
+                  style={{
+                    background: `linear-gradient(135deg, ${c.color}, ${c.color}cc)`,
+                    boxShadow: `0 8px 22px -6px ${c.color}66`,
+                  }}
+                >
+                  <i className={`fa-solid ${c.icon}`} />
+                </div>
+                <div className="text-[10px] uppercase tracking-wider font-bold mb-1.5" style={{ color: c.color }}>
+                  {c.tag}
+                </div>
+                <h3 className="text-base mb-2 leading-tight">{c.title}</h3>
+                <p className="text-sm text-slate-600 leading-relaxed mb-4 line-clamp-3">{c.desc}</p>
+                <span className="text-sm font-semibold text-primary-600 inline-flex items-center gap-1.5 group-hover:gap-3 transition-all">
+                  Explore <i className="fa-solid fa-arrow-right text-xs" />
+                </span>
+              </div>
+            </Link>
+          </FadeIn>
+        ))}
+      </div>
+      <div className="text-center">
+        <Button to="/empanelment" variant="primary" size="lg" icon="fa-arrow-right">
+          View Full Empanelment List
+        </Button>
+        <p className="text-xs text-slate-500 mt-3">All government schemes, employers, insurers, TPAs and international partners — categorized & searchable.</p>
+      </div>
+    </Section>
+  );
+}
+
 function EmpanelmentsMarquee() {
   const list = [...empanelments, ...empanelments];
   return (
@@ -561,6 +648,7 @@ export default function Home() {
       <StatsBand />
       <TestimonialsSection />
       <BlogSection />
+      <EmpanelmentSection />
       <EmpanelmentsMarquee />
       <CtaBand />
     </>

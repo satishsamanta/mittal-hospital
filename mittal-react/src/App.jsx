@@ -21,6 +21,7 @@ import Emergency from './pages/Emergency.jsx';
 import HealthCheckup from './pages/HealthCheckup.jsx';
 import VideoConsultation from './pages/VideoConsultation.jsx';
 import SecondOpinion from './pages/SecondOpinion.jsx';
+import Empanelment from './pages/Empanelment.jsx';
 import Blog from './pages/Blog.jsx';
 import PatientStories from './pages/PatientStories.jsx';
 import MedicalTourism from './pages/MedicalTourism.jsx';
@@ -51,6 +52,7 @@ export default function App() {
           <Route path="/health-checkup" element={<HealthCheckup />} />
           <Route path="/video-consultation" element={<VideoConsultation />} />
           <Route path="/second-opinion" element={<SecondOpinion />} />
+          <Route path="/empanelment" element={<Empanelment />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/patient-stories" element={<PatientStories />} />
           <Route path="/medical-tourism" element={<MedicalTourism />} />

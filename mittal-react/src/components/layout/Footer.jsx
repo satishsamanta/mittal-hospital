@@ -57,8 +57,9 @@ export function Footer() {
                   ['Find a Doctor', '/doctors'],
                   ['Video Consultation', '/video-consultation'],
                   ['Second Opinion', '/second-opinion'],
-                  ['Book Appointment', '/appointment'],
+                  ['Empanelment & Cashless', '/empanelment'],
                   ['Health Checkup', '/health-checkup'],
+                  ['Book Appointment', '/appointment'],
                   ['Career', '/career'],
                   ['Contact', '/contact'],
                 ].map(([l, h]) => (

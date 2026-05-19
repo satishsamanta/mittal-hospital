@@ -974,7 +974,77 @@ export const facilities = [
   { name: 'Cafeteria & Waiting Lounges', icon: 'fa-mug-hot', desc: 'Hygienic, spacious lounges and a diet-compliant cafeteria.', image: 'https://images.unsplash.com/photo-1559329007-40df8a9345d8?auto=format&fit=crop&w=900&q=80' },
 ];
 
-// Insurance partners — styled brand badges (sample placeholders, user replaces with real logos).
+// Government health schemes & low-cost treatment programs — top priority on the empanelment page.
+export const govSchemes = [
+  {
+    code: 'RGHS',
+    name: 'Rajasthan Government Health Scheme',
+    desc: 'Cashless hospitalisation for RGHS beneficiaries — Mittal Hospital is empanelled directly via the official Rajasthan portal. Government bears the full treatment cost as per RGHS package rates.',
+    eligibility: 'State government employees, pensioners and dependents',
+    color: '#0a6cb8',
+    mark: 'R',
+  },
+  {
+    code: 'CGHS',
+    name: 'Central Government Health Scheme',
+    desc: 'Cashless treatment for central government employees, pensioners and their dependents at CGHS package rates.',
+    eligibility: 'Central govt employees / pensioners',
+    color: '#1a3a8e',
+    mark: 'C',
+  },
+  {
+    code: 'ECHS',
+    name: 'Ex-Servicemen Contributory Health Scheme',
+    desc: 'Comprehensive medical care for ex-servicemen and dependents under ECHS guidelines and package rates.',
+    eligibility: 'Ex-servicemen & dependents',
+    color: '#06a77d',
+    mark: 'E',
+  },
+  {
+    code: 'CMAHY',
+    name: 'Chief Minister Ayushman Health Yojana',
+    desc: 'Rajasthan’s flagship state health-cover programme for low-income families — cashless treatment up to the scheme limit.',
+    eligibility: 'Eligible Rajasthan families per scheme criteria',
+    color: '#e63946',
+    mark: 'A',
+    note: 'Note: The hospital lists this as "Chief Minister Ayushman Health Yojana" — not "Chiranjeevi". They are the rebranded/renamed iteration of the state cover.',
+  },
+  {
+    code: 'ESIC',
+    name: 'Employees’ State Insurance Corporation',
+    desc: 'Cashless treatment for organised-sector workers and dependents covered under the ESIC scheme.',
+    eligibility: 'ESIC card-holders & dependents',
+    color: '#f77f00',
+    mark: 'E',
+  },
+];
+
+// PSU / Government employer tie-ups — direct billing for their employees & dependents.
+export const psuTieUps = [
+  { name: 'Airports Authority of India', short: 'AAI', sector: 'Aviation PSU' },
+  { name: 'AVVNL (Ajmer Vidyut Vitran Nigam Ltd)', short: 'AVVNL', sector: 'Power Discom' },
+  { name: 'RRVPNL (Rajasthan Rajya Vidyut Prasaran Nigam)', short: 'RRVPNL', sector: 'Power Transmission' },
+  { name: 'GAIL (India) Ltd', short: 'GAIL', sector: 'Oil & Gas PSU' },
+  { name: 'Indian Oil Corporation', short: 'IOC', sector: 'Oil & Gas PSU' },
+  { name: 'HPCL', short: 'HPCL', sector: 'Oil & Gas PSU' },
+  { name: 'Bharat Petroleum', short: 'BPCL', sector: 'Oil & Gas PSU' },
+  { name: 'Central University of Rajasthan', short: 'CURAJ', sector: 'Central University' },
+  { name: 'North Western Railway', short: 'NWR', sector: 'Indian Railways' },
+  { name: 'JVVNL (Jaipur Vidyut Vitran Nigam)', short: 'JVVNL', sector: 'Power Discom' },
+  { name: 'Coal India Ltd', short: 'Coal India', sector: 'Mining PSU' },
+  { name: 'Rajasthan State Agricultural Marketing Board', short: 'RSAMB', sector: 'State Board' },
+  { name: 'Union Bank of India', short: 'UBI', sector: 'Public Sector Bank' },
+  { name: 'Rajasthan State Ganganagar Sugar Mills', short: 'RSGSM', sector: 'State PSU' },
+  { name: 'Power Grid Corporation', short: 'Power Grid', sector: 'Power Transmission PSU' },
+  { name: 'Rajasthan Board of Secondary Education', short: 'RBSE', sector: 'State Board' },
+  { name: 'Central Board of Secondary Education', short: 'CBSE', sector: 'Central Board' },
+  { name: 'Maharshi Dayanand Saraswati University, Ajmer', short: 'MDSU', sector: 'State University' },
+  { name: 'NRCSS (National Research Centre on Seed Spices)', short: 'NRCSS', sector: 'ICAR Institute' },
+  { name: 'Food Corporation of India', short: 'FCI', sector: 'Central PSU' },
+  { name: 'Rajasthan Tourism Development Corporation', short: 'RTDC', sector: 'State PSU' },
+];
+
+// Health insurance partners — extended list covering all officially empanelled insurers.
 // `domain` is used to fetch a tiny favicon accent via Google's reliable S2 service.
 // `color` is the partner's primary brand colour for the logo card.
 // `mark` is a short stylized brand initial that anchors the badge visually.
@@ -991,6 +1061,35 @@ export const empanelments = [
   { name: 'CGHS',                short: 'CGHS',            tagline: 'Government Scheme', color: '#0a6cb8', mark: 'G',  domain: null,             scheme: true },
   { name: 'ECHS',                short: 'ECHS',            tagline: 'Government Scheme', color: '#06a77d', mark: 'E',  domain: null,             scheme: true },
   { name: 'ESIC',                short: 'ESIC',            tagline: 'Government Scheme', color: '#0a6cb8', mark: 'E',  domain: 'esic.gov.in',     scheme: true },
+  { name: 'Future Generali',     short: 'Future Generali', tagline: 'Health Insurance',  color: '#ff6b00', mark: 'F',  domain: 'futuregenerali.in' },
+  { name: 'ICICI Prudential',    short: 'ICICI Pru',       tagline: 'Life Insurance',    color: '#e0301e', mark: 'I',  domain: 'iciciprulife.com' },
+  { name: 'Cholamandalam MS',    short: 'Cholamandalam',   tagline: 'General Insurance', color: '#0f4c81', mark: 'C',  domain: 'cholainsurance.com' },
+  { name: 'IFFCO-Tokio',         short: 'IFFCO-Tokio',     tagline: 'General Insurance', color: '#005baa', mark: 'I',  domain: 'iffcotokio.co.in' },
+];
+
+// Third-party administrators handling cashless claims processing.
+export const tpas = [
+  { name: 'Park Mediclaim', short: 'Park', color: '#0d6efd', mark: 'P' },
+  { name: 'Safeway', short: 'Safeway', color: '#198754', mark: 'S' },
+  { name: 'Good Health', short: 'Good Health', color: '#0a6cb8', mark: 'G' },
+  { name: 'Genins', short: 'Genins', color: '#6f42c1', mark: 'G' },
+  { name: 'Alankit', short: 'Alankit', color: '#dc3545', mark: 'A' },
+  { name: 'Health India', short: 'Health India', color: '#fd7e14', mark: 'H' },
+  { name: 'Paramount', short: 'Paramount', color: '#1a4d8c', mark: 'P' },
+  { name: 'MD India', short: 'MD India', color: '#0a6cb8', mark: 'M' },
+  { name: 'Medi Assist', short: 'Medi Assist', color: '#06a77d', mark: 'M' },
+  { name: 'United Healthcare', short: 'United', color: '#005bbb', mark: 'U' },
+  { name: 'Vipul Medcorp', short: 'Vipul', color: '#b22128', mark: 'V' },
+  { name: 'Vidal Health', short: 'Vidal Health', color: '#0d2c5c', mark: 'V' },
+  { name: 'Heritage Health', short: 'Heritage', color: '#8b4513', mark: 'H' },
+];
+
+// International assistance partners — for overseas patients & travel-insurance claims.
+export const internationalPartners = [
+  { name: 'Europ Assistance', short: 'Europ Assistance', color: '#003478', mark: 'E', region: 'Europe' },
+  { name: 'Meera Rescue', short: 'Meera Rescue', color: '#b22128', mark: 'M', region: 'Asia' },
+  { name: 'Asia Medical Assistance', short: 'Asia Medical', color: '#06a77d', mark: 'A', region: 'Asia-Pacific' },
+  { name: 'AXA Assistance India', short: 'AXA', color: '#00008f', mark: 'A', region: 'Global' },
 ];
 
 export const milestones = [

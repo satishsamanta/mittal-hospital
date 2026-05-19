@@ -24,6 +24,7 @@ const TOP_LINKS = [
       { label: 'Video Consultation', to: '/video-consultation' },
       { label: 'Second Opinion', to: '/second-opinion' },
       { label: 'Health Checkup', to: '/health-checkup' },
+      { label: 'Empanelment & Cashless', to: '/empanelment' },
       { label: 'Blood Bank', to: '/services#blood-bank' },
       { label: 'Dialysis', to: '/services#dialysis' },
     ],
